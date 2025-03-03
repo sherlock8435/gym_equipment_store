@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml.Linq;
 using ServiceReference1;
+
 public partial class pages_register : System.Web.UI.Page
 {
     Service1Client serv = new Service1Client();
@@ -45,7 +46,7 @@ public partial class pages_register : System.Web.UI.Page
         };
 
 
-        if (!serv.CheckUserExist(password, email))
+        if (serv.CheckUserExistByEmail(email))
         {
             serv.AddUser(user);
             Session["email"] = email;
@@ -56,9 +57,11 @@ public partial class pages_register : System.Web.UI.Page
         {
             exist.Visible = true;
         }
+    }
 
-        exist.Visible = true;
-        exist.Text = $"countryID is {country} ";
+    protected void agreeTerms(object source, ServerValidateEventArgs args)
+    {
+        args.IsValid = check_terms.Checked;
     }
 
     protected void sgin_in_Click(object sender, EventArgs e)

@@ -60,6 +60,7 @@
             ValidationGroup="register"
             Style="margin-right: 20px" />
 
+        <br />
 
         <asp:RequiredFieldValidator ID="rfvConfirm" runat="server"
             ControlToValidate="password_confirm"
@@ -173,13 +174,14 @@
             <a href="../place_holders/terms_and_condetions.html"> terms and conditions </a>
         </asp:Label>
 
-        <asp:CheckBox Style="padding: 5px; margin-right: 160px;" ID="agreeTerms" runat="server" ValidationGroup="register" ValidateRequestMode="Enabled" />
+        <asp:CheckBox Style="padding: 5px; margin-right: 160px;" ID="check_terms" runat="server" ValidationGroup="register" ValidateRequestMode="Enabled" />
 
         <br />
 
         <asp:CustomValidator ID="CustomValidator1" runat="server"
             ErrorMessage="You must agree to the terms and conditions!"
             ClientValidationFunction="validateCheckBox"
+            OnServerValidate="agreeTerms"
             ValidationGroup="register"
             Style="color: red">
         </asp:CustomValidator>
@@ -199,7 +201,7 @@
 
     <script type="text/javascript">
         function validateCheckBox(sender, args) {
-            var checkbox = document.getElementById('<%= agreeTerms.ClientID %>');
+            var checkbox = document.getElementById('<%= check_terms.ClientID %>');
             args.IsValid = checkbox.checked;
         }
     </script>
