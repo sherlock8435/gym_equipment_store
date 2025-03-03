@@ -60,6 +60,7 @@
             ValidationGroup="register"
             Style="margin-right: 20px" />
 
+        <br />
 
         <asp:RequiredFieldValidator ID="rfvConfirm" runat="server"
             ControlToValidate="password_confirm"
@@ -180,6 +181,7 @@
         <asp:CustomValidator ID="CustomValidator1" runat="server"
             ErrorMessage="You must agree to the terms and conditions!"
             ClientValidationFunction="validateCheckBox"
+            OnServerValidate="check_terms"
             ValidationGroup="register"
             Style="color: red">
         </asp:CustomValidator>

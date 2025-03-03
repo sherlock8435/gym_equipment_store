@@ -46,14 +46,14 @@ public partial class pages_register : System.Web.UI.Page
 
 
         if (!serv.CheckUserExist(password, email))
-        {
+    {
             serv.AddUser(user);
             Session["email"] = email;
             Session["password"] = password;
             Response.Redirect("home.aspx");
-        }
+    }
         else
-        {
+    {
             exist.Visible = true;
         }
 

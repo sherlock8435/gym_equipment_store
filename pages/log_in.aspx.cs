@@ -10,7 +10,7 @@ public partial class pages_log_in : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+
     }
 
     protected void register_Click(object sender, EventArgs e)
