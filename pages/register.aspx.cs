@@ -52,9 +52,9 @@ public partial class pages_register : System.Web.UI.Page
             Session["email"] = email;
             Session["password"] = password;
             Response.Redirect("home.aspx");
-        }
+    }
         else
-        {
+    {
             exist.Visible = true;
         }
     }

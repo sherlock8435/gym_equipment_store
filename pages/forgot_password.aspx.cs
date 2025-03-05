@@ -34,7 +34,7 @@ public partial class pages_Default : System.Web.UI.Page
         else
         {
             this.lblinfo.Visible = true;
-            this.lblinfo.Text = "Not registered Email !";
+            this.lblinfo.Text = "Not a registered Email!";
         }
     }
 
