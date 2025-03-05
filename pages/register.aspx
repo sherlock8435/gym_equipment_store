@@ -192,7 +192,7 @@
 
         <asp:Button ID="register" runat="server" Text="register" Style="margin-right: 10px;" OnClick="register_Click" ValidationGroup="register" />
 
-        <asp:Label ID="exist" runat="server" Text="user already exists!" Style="color: red; visibility: hidden;" />
+        <asp:Label ID="exist" runat="server" Text="" Style="color: red;" />
 
         <asp:Button ID="sign_in" runat="server" Text="sgin in" class="login_btn" OnClick="sgin_in_Click" />
 
