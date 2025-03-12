@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.ServiceModel.Security;
 using System.Web;
@@ -13,39 +14,47 @@ public partial class pages_Default : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        lblpasswordque.Visible = false;
+        answer.Visible = false;
+        lblpasswordque.Visible = false;
+        reset.Visible = false;
+        lblinfo.Text = string.Empty;
 
     }
 
     protected void Check_Click(object sender, EventArgs e)
     {
-        string Uemail = this.email.Text;
-        if (seserv.CheckUserExistByEmail(Uemail))
+        string Uemail = email.Text;
+        if (seserv.CheckUserExistByEmail(Uemail) && answer.Text.Equals(""))
         {
-            this.check.Visible = false;
-            this.lblpasswordque.Visible = true; 
-            this.lblinfo.Text = "";
-            this.answer.Visible = true;
-            this.lblpasswordque.Visible = true;
-            this.lblpasswordque.Text = seserv.GetQuestion(Uemail);
-            this.reset.Visible = true;
+            lblpasswordque.Visible = true;
+            answer.Visible = true;
+            lblpasswordque.Visible = true;
+            lblpasswordque.Text = seserv.GetQuestion(Uemail).ToString();
+            reset.Visible = true;
+            lblinfo.Text = "";
+            return;
+        }
+        if (!seserv.CheckUserExistByEmail(Uemail))
+        {
+            lblinfo.Text = "Not a registered Email!";
+            return;
         }
 
+        string uEmail = email.Text;
+        string uAnswer = answer.Text;
+        string pass = seserv.PassRecovery(uEmail, uAnswer);
 
+        if (pass != null)
+            lblinfo.Text = "your passowrd is:" + pass;
         else
-        {
-            this.lblinfo.Visible = true;
-            this.lblinfo.Text = "Not a registered Email!";
-        }
+            lblinfo.Text = "wrong answer";
     }
 
     protected void btnReset_Click(object sender, EventArgs e)
     {
-        string uEmail = this.email.Text;
-        string pass = seserv.PassRecovery(uEmail, answer.Text);
-
-        if (pass.Length > 0)
-            lblinfo.Text = "your passowrd is:  " + pass;
-        else
-            lblinfo.Text = "Try Again!";
+        email.Text = "";
+        answer.Text = "";
+        question.Visible = false;
     }
 }

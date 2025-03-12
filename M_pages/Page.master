@@ -19,7 +19,7 @@
     <!-- add icon link -->
     <link rel="icon" href="../resources/images/icon.png"
         type="image/png" />
-    
+
     <title>neogym</title>
 
     <!-- slider stylesheet -->
@@ -60,16 +60,19 @@
                             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
                                 <ul class="navbar-nav  ">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="home.aspx">Home <span class="sr-only">(current)</span></a>
-                                    </li>
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="log_in.aspx">log in</a>
+                                        <a id="link1" runat="server" class="nav-link" href="~/pages/home.aspx">
+                                            <asp:Label ID="lbl1" runat="server" Text="home" /></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="trainers.aspx">trainers</a>
+                                        <a id="link2" runat="server" class="nav-link" href="~/pages/log_in.aspx">
+                                            <asp:Label ID="lbl2" runat="server" Text="login" /></a>
+                                    <li class="nav-item">
+                                        <a id="link3" runat="server" class="nav-link" href="~/pages/items.aspx">
+                                            <asp:Label ID="lbl3" runat="server" Text="items" /></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="contacts.aspx">Contact Us</a>
+                                        <a id="link4" runat="server" class="nav-link" href="~/pages/contacts.aspx">
+                                            <asp:Label ID="lbl4" runat="server" Text="contacts" /></a>
                                     </li>
                                 </ul>
                                 <div class="user_option">

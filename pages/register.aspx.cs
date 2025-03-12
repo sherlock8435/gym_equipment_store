@@ -48,7 +48,6 @@ public partial class pages_register : System.Web.UI.Page
 
         if (serv.CheckUserExistByEmail(email))
         {
-
             exist.Text = "user already exists!";
         }
         else

@@ -5,6 +5,7 @@
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/Model" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System.Data" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_SelectAllCities_InputMessage">
@@ -72,6 +73,18 @@
   </wsdl:message>
   <wsdl:message name="IService1_DeleteItem_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItems" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectItemByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectItemByID" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectItemByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectItemByIDResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_SelectAllOrders_InputMessage">
     <wsdl:part name="parameters" element="tns:SelectAllOrders" />
@@ -219,6 +232,14 @@
     <wsdl:operation name="DeleteItem">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteItem" message="tns:IService1_DeleteItem_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteItemResponse" message="tns:IService1_DeleteItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetItems" message="tns:IService1_GetItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetItemsResponse" message="tns:IService1_GetItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectItemByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectItemByID" message="tns:IService1_SelectItemByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelectItemByIDResponse" message="tns:IService1_SelectItemByID_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SelectAllOrders">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectAllOrders" message="tns:IService1_SelectAllOrders_InputMessage" />
@@ -383,6 +404,24 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteItem">
       <soap:operation soapAction="http://tempuri.org/IService1/DeleteItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItems">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectItemByID">
+      <soap:operation soapAction="http://tempuri.org/IService1/SelectItemByID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

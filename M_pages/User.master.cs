@@ -9,6 +9,10 @@ public partial class MPages_MasterPage2 : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["email"] != null && Session["password"] != null)
+        {
+            link2.HRef = "~/pages/profile.aspx";
+            lbl2.Text = "profile";
+        }
     }
 }
