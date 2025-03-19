@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -14,34 +15,46 @@ public partial class pages_items : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
+
             BindData();
         }
     }
+
 
     private void BindData()
     {
         DataTable dt = serv.GetItems();
 
-        List<Item> items = null;
-        for (int i = 0; i < dt.Rows.Count; i++)
+        List<Item> items = new List<Item>();
+        Item item = null;
+
+
+        for (int i = 0, j = 0; i < dt.Rows.Count; i++, j++)
         {
-            items = new List<Item>
+            item = new Item
             {
-               new Item
-                {
-                ItemCode = int.Parse(dt.Rows[i]["ItemID"].ToString()) ,
+                ItemCode = int.Parse(dt.Rows[i]["ItemID"].ToString()),
                 Name = dt.Rows[i]["Name"].ToString(),
                 Price = int.Parse(dt.Rows[i]["Price"].ToString()),
                 ItemImg = dt.Rows[i]["ItemImg"].ToString(),
-                Quantity = int.Parse(dt.Rows[i]["Quantity"].ToString()) ,
+                Quantity = int.Parse(dt.Rows[i]["Quantity"].ToString()),
                 Description = dt.Rows[i]["Description"].ToString(),
                 Category = dt.Rows[i]["Category"].ToString()
-                }
             };
+            if (item != null)
+                items.Add(item);
         }
 
-        gvProperties.DataSource = items;
-        gvProperties.DataBind();
+        GridView.DataSource = items;
+        GridView.AutoGenerateColumns = false;
+        GridView.DataBind();
 
+    }
+
+    protected void PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        GridView.PageIndex = e.NewPageIndex;
+
+        BindData();
     }
 }
