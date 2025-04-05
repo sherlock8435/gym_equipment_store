@@ -8,6 +8,42 @@
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/System.Data" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService1_addtocart_InputMessage">
+    <wsdl:part name="parameters" element="tns:addtocart" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addtocart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addtocartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCart" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteCart" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteCartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectAllCarts_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllCarts" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectAllCarts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllCartsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectCartByEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCartByEmail" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectCartByEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCartByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectCartByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCartByID" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectCartByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCartByIDResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_SelectAllCities_InputMessage">
     <wsdl:part name="parameters" element="tns:SelectAllCities" />
   </wsdl:message>
@@ -195,6 +231,30 @@
     <wsdl:part name="parameters" element="tns:SelectAllMsgResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
+    <wsdl:operation name="addtocart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addtocart" message="tns:IService1_addtocart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addtocartResponse" message="tns:IService1_addtocart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateCart" message="tns:IService1_UpdateCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateCartResponse" message="tns:IService1_UpdateCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/deleteCart" message="tns:IService1_deleteCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/deleteCartResponse" message="tns:IService1_deleteCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllCarts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectAllCarts" message="tns:IService1_SelectAllCarts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelectAllCartsResponse" message="tns:IService1_SelectAllCarts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectCartByEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectCartByEmail" message="tns:IService1_SelectCartByEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelectCartByEmailResponse" message="tns:IService1_SelectCartByEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectCartByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectCartByID" message="tns:IService1_SelectCartByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelectCartByIDResponse" message="tns:IService1_SelectCartByID_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="SelectAllCities">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectAllCities" message="tns:IService1_SelectAllCities_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelectAllCitiesResponse" message="tns:IService1_SelectAllCities_OutputMessage" />
@@ -322,6 +382,60 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="addtocart">
+      <soap:operation soapAction="http://tempuri.org/IService1/addtocart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCart">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCart">
+      <soap:operation soapAction="http://tempuri.org/IService1/deleteCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllCarts">
+      <soap:operation soapAction="http://tempuri.org/IService1/SelectAllCarts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCartByEmail">
+      <soap:operation soapAction="http://tempuri.org/IService1/SelectCartByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCartByID">
+      <soap:operation soapAction="http://tempuri.org/IService1/SelectCartByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SelectAllCities">
       <soap:operation soapAction="http://tempuri.org/IService1/SelectAllCities" style="document" />
       <wsdl:input>

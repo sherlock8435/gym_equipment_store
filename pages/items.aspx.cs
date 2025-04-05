@@ -33,7 +33,7 @@ public partial class pages_items : System.Web.UI.Page
         {
             item = new Item
             {
-                ItemCode = int.Parse(dt.Rows[i]["ItemID"].ToString()),
+                ItemID = int.Parse(dt.Rows[i]["ItemID"].ToString()),
                 Name = dt.Rows[i]["Name"].ToString(),
                 Price = int.Parse(dt.Rows[i]["Price"].ToString()),
                 ItemImg = dt.Rows[i]["ItemImg"].ToString(),
@@ -51,10 +51,41 @@ public partial class pages_items : System.Web.UI.Page
 
     }
 
+    
+
     protected void PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
         GridView.PageIndex = e.NewPageIndex;
 
         BindData();
+    }
+
+
+
+    protected void Cart_Click(object sender, EventArgs e)
+    {
+        
+
+    }
+
+    protected void view_Click(object sender, EventArgs e)
+    {
+      
+    }
+
+    protected void GridView_SelectedIndexChanged(object sender, EventArgs e)
+    {
+       
+    }
+
+    protected void cart_Command(object sender, CommandEventArgs e)
+    {
+        
+    }
+
+    protected void view_Command(object sender, CommandEventArgs e)
+    {
+        string a = e.CommandArgument.ToString();
+        Response.Redirect("EQ/" + a);
     }
 }
