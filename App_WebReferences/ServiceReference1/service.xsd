@@ -1,16 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import namespace="http://schemas.datacontract.org/2004/07/Model" />
-  <xs:element name="addtocart">
+  <xs:element name="AddToCart">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="c" nillable="true" type="q1:Cart" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="addtocartResponse">
+  <xs:element name="AddToCartResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddToCartResult" type="xs:int" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateCart">
@@ -22,19 +24,23 @@
   </xs:element>
   <xs:element name="UpdateCartResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateCartResult" type="xs:int" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="deleteCart">
+  <xs:element name="DeleteCart">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="c" nillable="true" type="q3:Cart" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="deleteCartResponse">
+  <xs:element name="DeleteCartResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteCartResult" type="xs:int" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SelectAllCarts">
@@ -63,17 +69,17 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SelectCartByID">
+  <xs:element name="GetCartItems">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="cartID" type="xs:int" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SelectCartByIDResponse">
+  <xs:element name="GetCartItemsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="SelectCartByIDResult" nillable="true" type="q6:Cart" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Model" minOccurs="0" name="GetCartItemsResult" nillable="true" type="q6:ArrayOfItem" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

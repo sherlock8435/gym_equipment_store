@@ -2,8 +2,9 @@
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:complexType name="Cart">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Items" type="xs:int" />
-      <xs:element minOccurs="0" name="ItemsAmount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CartID" type="xs:int" />
+      <xs:element minOccurs="0" name="ItemCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Items" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UserEmail" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -14,19 +15,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfCart" nillable="true" type="tns:ArrayOfCart" />
-  <xs:complexType name="ArrayOfCities">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cities" nillable="true" type="tns:Cities" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfCities" nillable="true" type="tns:ArrayOfCities" />
-  <xs:complexType name="Cities">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="CityName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Cities" nillable="true" type="tns:Cities" />
   <xs:complexType name="ArrayOfItem">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:Item" />
@@ -45,6 +33,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Item" nillable="true" type="tns:Item" />
+  <xs:complexType name="ArrayOfCities">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cities" nillable="true" type="tns:Cities" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCities" nillable="true" type="tns:ArrayOfCities" />
+  <xs:complexType name="Cities">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cities" nillable="true" type="tns:Cities" />
   <xs:complexType name="ArrayOfOrder">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Order" nillable="true" type="tns:Order" />
@@ -53,10 +54,9 @@
   <xs:element name="ArrayOfOrder" nillable="true" type="tns:ArrayOfOrder" />
   <xs:complexType name="Order">
     <xs:sequence>
-      <xs:element minOccurs="0" name="ItemID" type="xs:int" />
+      <xs:element minOccurs="0" name="CartID" type="xs:int" />
       <xs:element minOccurs="0" name="OrderDate" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Price" type="xs:int" />
-      <xs:element minOccurs="0" name="Qnty" type="xs:int" />
       <xs:element minOccurs="0" name="UserEmail" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="VisaNumber" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -74,13 +74,13 @@
       <xs:element minOccurs="0" name="CityID" type="xs:int" />
       <xs:element minOccurs="0" name="Fname" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Lname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Uanswer" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Ubirthday" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Ugender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Uquestion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UserEmail" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UserPass" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Utelnum" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="uAnswer" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="uQuestion" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="User" nillable="true" type="tns:User" />

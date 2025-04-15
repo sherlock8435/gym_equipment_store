@@ -10,7 +10,7 @@ using ServiceReference1;
 
 public partial class pages_register : System.Web.UI.Page
 {
-    Service1Client serv = new Service1Client();
+    readonly Service1Client serv = new Service1Client();
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -41,8 +41,8 @@ public partial class pages_register : System.Web.UI.Page
             Ugender = gender,
             Ubirthday = dob,
             Utelnum = phoneNumber,
-            uQuestion = securityQuestion,
-            uAnswer = securityAnswer
+            Uquestion = securityQuestion,
+            Uanswer = securityAnswer
         };
 
 

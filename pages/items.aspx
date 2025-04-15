@@ -33,7 +33,7 @@
                 <asp:BoundField DataField="Category" HeaderText="Category" />
                 <asp:BoundField DataField="Quantity" HeaderText="Quantity" />
                 <asp:BoundField DataField="Price" HeaderText="Price" DataFormatString="{0:C0}" />
-                <asp:TemplateField HeaderText="Photo">
+                <asp:TemplateField HeaderText="">
                     <ItemTemplate>
                         <!-- First Button -->
                         <asp:Button ID="cart" runat="server" Text="add to cart" CommandName="EditItem" CommandArgument='<%# Eval("ItemID") %>' OnCommand="cart_Command" />
@@ -43,7 +43,5 @@
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
-
-        <asp:Label runat="server" ID="test" Text="test"/>
     </div>
 </asp:Content>

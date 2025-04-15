@@ -1,0 +1,87 @@
+﻿we<%@ Master Language="C#" AutoEventWireup="true" CodeFile="test.master.cs" Inherits="__debug_master_test" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Neogym</title>
+
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.css" />
+
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+    <!-- Custom styles -->
+    <link href="../resources/css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="../resources/css/responsive.css" rel="stylesheet" />
+
+
+    <script src="../resoures/js/jquery-3.4.1.min.js"></script>
+    <script src="../resoures/js/bootstrap.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="login" style="background-color: black">
+
+            <div class="hero_area">
+                <header class="header_section">
+                    <div class="container-fluid">
+                        <nav class="navbar navbar-expand-lg custom_nav-container ">
+                            <a class="navbar-brand" href="home.aspx">
+                                <span>Neogym
+                                </span>
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                                    <ul class="navbar-nav  ">
+                                        <li class="nav-item active">
+                                            <a id="link1" runat="server" class="nav-link" href="~/pages/home.aspx">
+                                                <asp:Label ID="lbl1" runat="server" Text="home" /></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a id="link2" runat="server" class="nav-link" href="~/pages/log_in.aspx">
+                                                <asp:Label ID="lbl2" runat="server" Text="login" /></a>
+                                        <li class="nav-item">
+                                            <a id="link3" runat="server" class="nav-link" href="~/pages/items.aspx">
+                                                <asp:Label ID="lbl3" runat="server" Text="items" /></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a id="link4" runat="server" class="nav-link" href="~/pages/contacts.aspx">
+                                                <asp:Label ID="lbl4" runat="server" Text="contacts" /></a>
+                                        </li>
+                                    </ul>
+                                    <div class="user_option">
+                                        <button class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0 btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </header>
+                <asp:ContentPlaceHolder ID="body" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

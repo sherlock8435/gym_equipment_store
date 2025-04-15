@@ -4,19 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using ServiceReference1;
 
 public partial class pages_debug : System.Web.UI.Page
 {
+
+    readonly Service1Client serv = new Service1Client();
     protected void Page_Load(object sender, EventArgs e)
     {
-        string a = "1,2,3,4,5,6,7,8,9,10";
-        string[] b = new string[10];
-        int i = 0;
-        b = a.Split(',');
-        foreach (var item in a)
-        { 
-            TextBox1.Text = b[i] + "\n";
-            i++;
-        }
     }
 }

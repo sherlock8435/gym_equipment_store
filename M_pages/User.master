@@ -77,10 +77,8 @@
                     </nav>
                 </div>
             </header>
-            <div class="box-4">
                 <asp:ContentPlaceHolder ID="body" runat="server">
                 </asp:ContentPlaceHolder>
-            </div>
         </div>
     </form>
 </body>

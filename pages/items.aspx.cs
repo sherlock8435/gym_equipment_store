@@ -10,12 +10,15 @@ using ServiceReference1;
 
 public partial class pages_items : System.Web.UI.Page
 {
-    Service1Client serv = new Service1Client();
+    readonly Service1Client serv = new Service1Client();
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack)
+        if (Session["email"] == null)
         {
-
+            Response.Redirect("login.aspx");
+        }
+        else if (!IsPostBack)
+        {
             BindData();
         }
     }
@@ -26,7 +29,7 @@ public partial class pages_items : System.Web.UI.Page
         DataTable dt = serv.GetItems();
 
         List<Item> items = new List<Item>();
-        Item item = null;
+        Item item;
 
 
         for (int i = 0, j = 0; i < dt.Rows.Count; i++, j++)
@@ -51,7 +54,7 @@ public partial class pages_items : System.Web.UI.Page
 
     }
 
-    
+
 
     protected void PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
@@ -64,23 +67,23 @@ public partial class pages_items : System.Web.UI.Page
 
     protected void Cart_Click(object sender, EventArgs e)
     {
-        
+
 
     }
 
     protected void view_Click(object sender, EventArgs e)
     {
-      
+
     }
 
     protected void GridView_SelectedIndexChanged(object sender, EventArgs e)
     {
-       
+
     }
 
     protected void cart_Command(object sender, CommandEventArgs e)
     {
-        
+
     }
 
     protected void view_Command(object sender, CommandEventArgs e)
