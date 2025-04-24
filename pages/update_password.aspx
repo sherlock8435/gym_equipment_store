@@ -50,7 +50,5 @@
 
         <asp:Button ID="update" runat="server" Text="update" OnClick="update_Click" ValidationGroup="update" />
     </div>
-
-
 </asp:Content>
 

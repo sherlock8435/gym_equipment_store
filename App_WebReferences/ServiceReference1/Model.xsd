@@ -92,10 +92,8 @@
   <xs:element name="ArrayOfMailBox" nillable="true" type="tns:ArrayOfMailBox" />
   <xs:complexType name="MailBox">
     <xs:sequence>
-      <xs:element minOccurs="0" name="RecieverEmail" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SenderEmail" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SenderFName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="SenderLName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SenderName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="msgBody" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="msgDate" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="msgRead" type="xs:boolean" />
@@ -103,4 +101,17 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="MailBox" nillable="true" type="tns:MailBox" />
+  <xs:complexType name="ArrayOfCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Category" nillable="true" type="tns:Category" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCategory" nillable="true" type="tns:ArrayOfCategory" />
+  <xs:complexType name="Category">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Category" nillable="true" type="tns:Category" />
 </xs:schema>

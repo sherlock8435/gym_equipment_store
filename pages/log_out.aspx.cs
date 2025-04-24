@@ -13,8 +13,12 @@ public partial class pages_log_out : System.Web.UI.Page
     }
     protected void logout_Click(object sender, EventArgs e)
     {
-        
         Session.Clear();
-        Response.Redirect("~/pages/login.aspx");
+        Response.Redirect("~/pages/log_in.aspx");
+    }
+
+    protected void cancel_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/pages/home.aspx");
     }
 }

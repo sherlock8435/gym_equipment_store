@@ -3,23 +3,34 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="Server">
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
 
     <div class="box-4">
-        <div style="float: left; margin: 10% 0% 0% 25%; padding: 0% 0% 0% 0%;">
-            
+        <div style="float: left; margin: 10% 0% 0% 25%; padding: 0% 0% 0% 0%; width:75px">
+
             <!--menu for profile page -->
+
             <ul class="navbar-nav  ">
                 <li class="nav-item active">
-                    <a id="link1" runat="server" class="nav-link" href="../pages/update_password.aspx">
-                        <asp:Label ID="lbl1" runat="server" Text="update" /></a>
+                    <a id="link1" runat="server" class="nav-link" href="../pages/profile.aspx">
+                        <asp:Label ID="lbl1" runat="server" Text="profile" /></a>
+                </li>
+
+                <li class="nav-item active">
+                    <a id="link2" runat="server" class="nav-link" href="../pages/update_password.aspx">
+                        <asp:Label ID="lbl2" runat="server" Text="update" /></a>
                 </li>
 
                 <li class="nav-item">
-                    <a id="link2" runat="server" class="nav-link" href="../pages/log_out.aspx">
-                        <asp:Label ID="lbl2" runat="server" Text="log out" /></a>
+                    <a id="link3" runat="server" class="nav-link" href="../pages/log_out.aspx">
+                        <asp:Label ID="lbl3" runat="server" Text="log out" /></a>
+                </li>
+                <li class="nav-item">
+                    <a id="link4" runat="server" class="nav-link" href="../pages/delete_account.aspx">
+                        <asp:Label ID="lbl4" runat="server" Text="delete account" /></a>
                 </li>
             </ul>
         </div>

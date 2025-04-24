@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="Server">
     <div style="margin-right: 10%; margin-left: 10%;">
         <div style="float: left;">
-            <asp:Image ID="Image1" runat="server" ImageUrl="~/resources/images/items/bench.png" BorderColor="Black" />
+            <asp:Image ID="Image1" runat="server" BorderColor="Black" />
         </div>
         <div style="margin-left: 10px;">
             <asp:Label ID="name" runat="server" Text="name"></asp:Label>

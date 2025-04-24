@@ -74,6 +74,10 @@
                                         <a id="link4" runat="server" class="nav-link" href="~/pages/contacts.aspx">
                                             <asp:Label ID="lbl4" runat="server" Text="contacts" /></a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a id="link5" runat="server" class="nav-link" href="~/pages/cart.aspx">
+                                            <asp:Label ID="lbl5" runat="server" Text="cart" /></a>
+                                    </li>
                                 </ul>
                                 <div class="user_option">
                                     <button class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0 btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>

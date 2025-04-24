@@ -42,7 +42,6 @@ public partial class pages_cart : System.Web.UI.Page
     protected void PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
         GridView.PageIndex = e.NewPageIndex;
-
         BindData();
     }
 
@@ -73,8 +72,6 @@ public partial class pages_cart : System.Web.UI.Page
     {
         Cart cart = serv.SelectCartByEmail(Session["email"].ToString());
         string itemID = e.CommandArgument.ToString();
-
-
         string items = cart.Items.Replace(itemID + ",", "");
         cart.Items = items;
         serv.UpdateCart(cart);

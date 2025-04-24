@@ -15,7 +15,7 @@ public partial class pages_items : System.Web.UI.Page
     {
         if (Session["email"] == null)
         {
-            Response.Redirect("login.aspx");
+            Response.Redirect("log_in.aspx");
         }
         else if (!IsPostBack)
         {
@@ -83,7 +83,9 @@ public partial class pages_items : System.Web.UI.Page
 
     protected void cart_Command(object sender, CommandEventArgs e)
     {
-
+        int a = int.Parse(e.CommandArgument.ToString());
+        Item item = serv.SelectItemByID(a);
+        serv.AddItemToCart(Session["email"].ToString(),item);
     }
 
     protected void view_Command(object sender, CommandEventArgs e)

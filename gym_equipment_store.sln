@@ -25,13 +25,22 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "gym_equipment_store", ".", 
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAdmin", "..\WpfAdmin\WpfAdmin\WpfAdmin.csproj", "{4161A733-7599-42DF-A106-4050B59DC3B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{8E37A48C-9DBA-47BB-A17C-F8F0EA487A9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8E37A48C-9DBA-47BB-A17C-F8F0EA487A9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E37A48C-9DBA-47BB-A17C-F8F0EA487A9C}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E37A48C-9DBA-47BB-A17C-F8F0EA487A9C}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{4161A733-7599-42DF-A106-4050B59DC3B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4161A733-7599-42DF-A106-4050B59DC3B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4161A733-7599-42DF-A106-4050B59DC3B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4161A733-7599-42DF-A106-4050B59DC3B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

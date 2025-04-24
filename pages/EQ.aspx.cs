@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 public partial class pages_EQ : System.Web.UI.Page
 {
-    Service1Client serv = new Service1Client();
+    readonly Service1Client serv = new Service1Client();
     protected void Page_Load(object sender, EventArgs e)
     {
         int id = int.Parse(Page.RouteData.Values["id"].ToString());
@@ -21,6 +21,7 @@ public partial class pages_EQ : System.Web.UI.Page
         quantity.Text = item.Quantity.ToString();
         price.Text = item.Price.ToString();
         category.Text = item.Category;
+        Image1.ImageUrl = item.ItemImg;
     }
 
     protected void cart_Click(object sender, EventArgs e)

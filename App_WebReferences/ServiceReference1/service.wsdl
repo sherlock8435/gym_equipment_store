@@ -44,6 +44,18 @@
   <wsdl:message name="IService1_GetCartItems_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetCartItemsResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetTotalPrice_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalPrice" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTotalPrice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddItemToCart_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddItemToCart" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddItemToCart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddItemToCartResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_SelectAllCities_InputMessage">
     <wsdl:part name="parameters" element="tns:SelectAllCities" />
   </wsdl:message>
@@ -230,6 +242,54 @@
   <wsdl:message name="IService1_SelectAllMsg_OutputMessage">
     <wsdl:part name="parameters" element="tns:SelectAllMsgResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_SelectMsgByEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectMsgByEmail" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectMsgByEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectMsgByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddMassage_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMassage" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddMassage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMassageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectAllCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllCategories" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectAllCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAllCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategories" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectCategoryByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCategoryByName" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectCategoryByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCategoryByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCategory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCategory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCategoryResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="AddToCart">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddToCart" message="tns:IService1_AddToCart_InputMessage" />
@@ -254,6 +314,14 @@
     <wsdl:operation name="GetCartItems">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetCartItems" message="tns:IService1_GetCartItems_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetCartItemsResponse" message="tns:IService1_GetCartItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalPrice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetTotalPrice" message="tns:IService1_GetTotalPrice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetTotalPriceResponse" message="tns:IService1_GetTotalPrice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddItemToCart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddItemToCart" message="tns:IService1_AddItemToCart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddItemToCartResponse" message="tns:IService1_AddItemToCart_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SelectAllCities">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectAllCities" message="tns:IService1_SelectAllCities_InputMessage" />
@@ -379,6 +447,38 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectAllMsg" message="tns:IService1_SelectAllMsg_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelectAllMsgResponse" message="tns:IService1_SelectAllMsg_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="SelectMsgByEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectMsgByEmail" message="tns:IService1_SelectMsgByEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelectMsgByEmailResponse" message="tns:IService1_SelectMsgByEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMassage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddMassage" message="tns:IService1_AddMassage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddMassageResponse" message="tns:IService1_AddMassage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectAllCategories" message="tns:IService1_SelectAllCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelectAllCategoriesResponse" message="tns:IService1_SelectAllCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetCategories" message="tns:IService1_GetCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetCategoriesResponse" message="tns:IService1_GetCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectCategoryByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectCategoryByName" message="tns:IService1_SelectCategoryByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelectCategoryByNameResponse" message="tns:IService1_SelectCategoryByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddCategory" message="tns:IService1_AddCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddCategoryResponse" message="tns:IService1_AddCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateCategory" message="tns:IService1_UpdateCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateCategoryResponse" message="tns:IService1_UpdateCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteCategory" message="tns:IService1_DeleteCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteCategoryResponse" message="tns:IService1_DeleteCategory_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -429,6 +529,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetCartItems">
       <soap:operation soapAction="http://tempuri.org/IService1/GetCartItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalPrice">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetTotalPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddItemToCart">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddItemToCart" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -708,6 +826,78 @@
     </wsdl:operation>
     <wsdl:operation name="SelectAllMsg">
       <soap:operation soapAction="http://tempuri.org/IService1/SelectAllMsg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectMsgByEmail">
+      <soap:operation soapAction="http://tempuri.org/IService1/SelectMsgByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMassage">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddMassage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAllCategories">
+      <soap:operation soapAction="http://tempuri.org/IService1/SelectAllCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategories">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCategoryByName">
+      <soap:operation soapAction="http://tempuri.org/IService1/SelectCategoryByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCategory">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategory">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteCategory" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

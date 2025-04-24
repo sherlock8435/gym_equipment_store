@@ -12,8 +12,14 @@ public partial class MPages_MasterPage : System.Web.UI.MasterPage
     {
         if (Session["email"] != null && Session["password"] != null)
         {
-           link2.HRef = "~/pages/profile.aspx";
+            link2.HRef = "~/pages/profile.aspx";
             lbl2.Text = "profile";
+        }
+        else
+        {
+
+            link5.Visible = false;
+            lbl5.Visible = false;
         }
     }
 
