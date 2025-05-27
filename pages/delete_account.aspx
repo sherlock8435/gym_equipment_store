@@ -13,7 +13,8 @@
     <br />
     <br />
 
-    <asp:Button ID="delete" runat="server" Text="Button" />
+    <asp:Button ID="delete" runat="server" Text="Button" OnClick="delete_Click" />
+    <asp:Label ID="error" runat="server" Visible="false" Text="wrong Password"></asp:Label>
 
 
 

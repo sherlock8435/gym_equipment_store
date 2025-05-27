@@ -26,6 +26,12 @@
   <wsdl:message name="IService1_DeleteCart_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteCartResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_CreatCrat_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatCrat" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CreatCrat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatCratResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_SelectAllCarts_InputMessage">
     <wsdl:part name="parameters" element="tns:SelectAllCarts" />
   </wsdl:message>
@@ -290,6 +296,12 @@
   <wsdl:message name="IService1_DeleteCategory_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteCategoryResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_UploadFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadFile" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UploadFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadFileResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="AddToCart">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddToCart" message="tns:IService1_AddToCart_InputMessage" />
@@ -302,6 +314,10 @@
     <wsdl:operation name="DeleteCart">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteCart" message="tns:IService1_DeleteCart_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteCartResponse" message="tns:IService1_DeleteCart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatCrat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreatCrat" message="tns:IService1_CreatCrat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreatCratResponse" message="tns:IService1_CreatCrat_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="SelectAllCarts">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectAllCarts" message="tns:IService1_SelectAllCarts_InputMessage" />
@@ -479,6 +495,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteCategory" message="tns:IService1_DeleteCategory_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteCategoryResponse" message="tns:IService1_DeleteCategory_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UploadFile" message="tns:IService1_UploadFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UploadFileResponse" message="tns:IService1_UploadFile_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -502,6 +522,15 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteCart">
       <soap:operation soapAction="http://tempuri.org/IService1/DeleteCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatCrat">
+      <soap:operation soapAction="http://tempuri.org/IService1/CreatCrat" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -905,10 +934,19 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap:operation soapAction="http://tempuri.org/IService1/UploadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="Service1">
     <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
-      <soap:address location="http://localhost:8733/Design_Time_Addresses/WcfServicecoatsshop/Service1/" />
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/WcfService/Service1/" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

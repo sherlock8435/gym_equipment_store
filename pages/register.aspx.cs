@@ -31,6 +31,14 @@ public partial class pages_register : System.Web.UI.Page
         string securityQuestion = this.securityQuestion.SelectedValue;
         string securityAnswer = this.securityAnswer.Text;
 
+
+        serv.CreatCrat();
+
+        Cart cart = new Cart
+        {
+            CartID = serv.SelectCartByEmail("pLaceholder").CartID,
+            UserEmail = email
+        };
         User user = new User
         {
             UserEmail = email,
@@ -42,17 +50,21 @@ public partial class pages_register : System.Web.UI.Page
             Ubirthday = dob,
             Utelnum = phoneNumber,
             Uquestion = securityQuestion,
-            Uanswer = securityAnswer
+            Uanswer = securityAnswer,
+            CartID = serv.SelectCartByEmail("placeholder").CartID.ToString()
         };
-
+        
 
         if (serv.CheckUserExistByEmail(email))
         {
             exist.Text = "user already exists!";
+            return;
         }
         else
         {
             serv.AddUser(user);
+            serv.UpdateCart(cart);
+            serv.UpdateUserProfile(user);
             Session["email"] = email;
             Session["password"] = password;
             Response.Redirect("home.aspx");

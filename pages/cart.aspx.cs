@@ -12,7 +12,6 @@ public partial class pages_cart : System.Web.UI.Page
     readonly Service1Client serv = new Service1Client();
     protected void Page_Load(object sender, EventArgs e)
     {
-        Session["email"] = "abcd";
         if (!Page.IsPostBack)
         {
             BindData();
