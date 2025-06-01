@@ -25,7 +25,8 @@ public partial class pages_profile : System.Web.UI.Page
                 Name.Text = user.Fname + " " + user.Lname;
                 Phone.Text = user.Utelnum;
                 Country.Text = serv.SelectCityById(user.CityID).CityName;
-
+                Gender.Text = user.Ugender;
+                Birthday.Text = user.Ubirthday;
             }
         }
     }
